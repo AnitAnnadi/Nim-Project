@@ -14,6 +14,9 @@ public class Nim {
       String gameMode = input.nextLine();
   
       int numPlayers;
+      
+      // AI option or multiplayer option
+      
       if (gameMode.equalsIgnoreCase("AI")) {
         numPlayers = 2;
       } else if (gameMode.equalsIgnoreCase("Multiplayer")) {
@@ -35,6 +38,8 @@ public class Nim {
           players[i] = new Player(name);
         }
       }
+      
+      // random pile size
   
       int pileSize = random.nextInt(100) + 1;
       GameBoard gameBoard = new GameBoard(pileSize);
@@ -56,6 +61,9 @@ public class Nim {
   
       System.out.println("Do you want to play again? (yes/no)");
       String playAgainResponse = input.nextLine();
+      
+      // play again option
+      
       playAgain = playAgainResponse.equalsIgnoreCase("yes");
     }
   }
