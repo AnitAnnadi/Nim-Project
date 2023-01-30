@@ -48,6 +48,9 @@ public class Nim {
       while (gameBoard.getPileSize() > 0) {
         System.out.println("Pile size: " + gameBoard.getPileSize());
         int numPieces = players[currentPlayer].move(gameBoard.getPileSize());
+        
+        // can't take more then half the pile
+        
         while ((gameBoard.getPileSize() > 3 && numPieces > gameBoard.getPileSize() / 2) || numPieces < 1) {
           System.out.println("Invalid move. Please remove anywhere from 1 piece to at most half of the pile.");
           numPieces = players[currentPlayer].move(gameBoard.getPileSize());
@@ -57,6 +60,9 @@ public class Nim {
       }
   
       System.out.println(gameBoard.toString());
+      
+      // winner is chosen
+      
       System.out.println(players[(currentPlayer + numPlayers - 1) % numPlayers].getName() + " wins!");
   
       System.out.println("Do you want to play again? (yes/no)");
